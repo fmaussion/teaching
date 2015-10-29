@@ -354,8 +354,7 @@ About
 -----
 
 :Aknowledgements:
-
-Largely inspired from the first parts of Michael Stonebank's `UNIX tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_
+    - Largely inspired from Michael Stonebank's `UNIX tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_
 
 :Author:
     - Fabien Maussion - fabien.maussion@uibk.ac.at
