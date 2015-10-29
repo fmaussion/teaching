@@ -32,11 +32,9 @@ The Linux `distribution <https://en.wikipedia.org/wiki/Linux_distribution>`_ use
 Open a terminal
 ---------------
 
-To open a terminal window, click on the "Terminal" icon from Applications/Accessories menu.
+To open a terminal window, click on the "Terminal" icon from the ``Applications/System Tools`` menu. You can add an icon to your "quick llounch" taskbar simply by dragging the icon to it.
 
-.. image:: http://www.ee.surrey.ac.uk/Teaching/Unix/media/gnome-window.gif
-
-A terminal window will then appear with a $ prompt, waiting for you to start entering commands.
+A terminal window should appear with a ``$`` prompt, waiting for you to start entering commands.
 
 Listing files and directories
 -----------------------------
