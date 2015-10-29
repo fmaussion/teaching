@@ -5,7 +5,7 @@
 A short tutorial to the Linux command line
 ==========================================
 
-This document is a very short introduction to the linux systems used at the Univeristy of Innsbruck and the Linux command line. 
+This document is a very short introduction to the linux systems used at the Univeristy of Innsbruck and to the Linux command line. 
 
 It was largely inspired from the first parts of Michael Stonebank's `UNIX tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_
 
@@ -16,11 +16,11 @@ The `world wide web <http://lmgtfy.com/?q=What+is+Linux%3F>`_ is going to give a
 
 I think that every student in sciences should know about the existence of Linux and know the basics of it. Meteorology students in particular will have to use it soon or late, as it is highly probable that most of the the tools and data they are using are running or have been created on Linux systems.
 
-Linux has always been an environment for programmers and has the reputation of beiing "geeky" and "complicated", but this is less true today, with many Linux distributions becoming mainstream and easy to use (my current personal favorite is `Mint <http://linuxmint.com/>`_).  
+Linux has always been an environment for programmers and has the reputation of beiing "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my current personal favorite is `Mint <http://linuxmint.com/>`_).  
 
-I personnaly think that Linux is even more user-friendly than Windows: once some particularities of its functioning are understood (which can be frustrating in the beginning since it works *very* differently than windows), one can see that there is much less "hidden" in Linux than in Windows, especially when installing/deinstalling softwares.
+I personnaly think that Linux is even more user-friendly than Windows: once some of its particularities are understood (which can be frustrating in the beginning since it works *very* differently than windows), one can see that there is much less "hidden" in Linux than in Windows (especially when installing/deinstalling softwares).
 
-Its command line utilities are very powerful, but we are just learning the basics of it here in order to get started with Python.
+Its command line utilities are very powerful, but we will just learn the basics before we get started with Python.
 
 Linux at the UIBK
 -----------------
@@ -69,7 +69,8 @@ All the files are grouped together in the directory structure. The file-system i
 
 .. image:: http://www.ee.surrey.ac.uk/Teaching/Unix/media/unix-tree.png
 
-When loging in we are automatically located in our personal ``home`` directory, which is aptly named:
+When loging in we are automatically located in our personal ``home`` directory, which is aptly named because:
+
 - we won't need to leave ``home`` during our excercises
 - we are allowed to do whatever we want in our ``home``, while we are not allowed to write, delete or change things in the other directories.
 
@@ -105,10 +106,13 @@ To change to the directory you have just made, type::
 
 Type ``ls`` to see the contents (which should be empty)
 
+**Exercise**: make a directory called ``backup`` in the ``unixstuff`` directory
+
+
 The directories . and ..
 ------------------------
 
-Still in the unixstuff directory, type::
+Still in the ``unixstuff`` directory, type::
 
   $ ls -a
 
@@ -132,4 +136,228 @@ This may not seem very useful at first, but using (.) as the name of the current
 
 will take you one directory up the hierarchy (back to your home directory). Try it now.
 
-**Note**: typing cd with no argument always returns you to your home directory. This is very useful if you are lost in the file system. 
+**Note**: typing cd with no argument always returns you to your home directory. This is very useful if you are lost in the file system.
+
+**~ (your home directory)**
+
+Home directories can also be referred to by the tilde ``~`` character. It can be used to specify paths starting at your home directory. So typing::
+
+  $ ls ~/unixstuff
+
+will list the contents of your unixstuff directory, no matter where you currently are in the file system.
+
+Copying files
+-------------
+
+**cp (copy)**
+
+``cp file1 file2`` is the command which makes a copy of ``file1`` in the current working directory and calls it ``file2``
+
+What we are going to do now, is to take a file stored in an open access area of the file system, and use the ``cp`` command to copy it to your unixstuff directory.
+
+First, ``cd`` to your unixstuff directory::
+
+  $ cd ~/unixstuff
+
+Then type::
+
+  $ cp /scratch/c707/c7071047/tuto/science.txt .
+
+**Note**: Don't forget the dot . at the end. Remember, in linux, the dot means the current directory.
+
+The above command means "copy the file science.txt to the current directory, keeping the name the same".
+
+**Note**: The directory ``/scratch/c707/c7071047/tuto`` is an area to which everyone in the University has read and copy access. If you are from outside the University, you can grab a copy of the file from the internet. For this, you can use another very useful command, ``wget``::
+
+  $ wget http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt
+  
+This will download the file ``science.txt`` to your current directory
+
+**Exercise**: Create a backup of your ``science.txt`` file by copying it to a file called ``science.bak``
+
+Moving files
+------------
+
+**mv (move)**
+
+``mv file1 file2`` moves (or renames) ``file1`` to ``file2``
+
+To move a file from one place to another, use the ``mv`` command. This has the effect of moving rather than copying the file, so you end up with only one file rather than two.
+
+It can also be used to rename a file, by moving the file to the same directory, but giving it a different name.
+
+We are now going to move the file ``science.bak`` to your ``backup`` directory.
+
+First, change directories to your ``unixstuff`` directory. Then type::
+
+  $ mv science.bak backup/.
+
+Type ``ls`` and ``ls backup`` to see if it has worked.
+
+Removing files and directories
+------------------------------
+
+**rm (remove), rmdir (remove directory)**
+
+To delete (remove) a file, use the ``rm`` command. As an example, we are going to create a copy of the ``science.txt`` file then delete it.
+
+Inside your ``unixstuff`` directory, type::
+
+  $ cp science.txt tempfile.txt 
+  $ ls
+  $ rm tempfile.txt
+  $ ls
+
+You can use the ``rmdir`` command to remove a directory (make sure it is empty first). Try to remove the ``backup`` directory. You will not be able to since linux will not let you remove a non-empty directory.
+
+Displaying the contents of a file on the screen
+-----------------------------------------------
+
+**clear (clear screen)**
+
+Before you start the next section, you may like to clear the terminal window of the previous commands so the output of the following commands can be clearly understood.
+
+At the prompt, type::
+
+  $ clear
+
+This will clear all text and leave you with the ``$`` prompt at the top of the window.
+
+ 
+**cat (concatenate)**
+
+The command ``cat`` can be used to display the contents of a file on the screen. Type::
+
+  $ cat science.txt
+
+As you can see, the file is longer than than the size of the window. You can scroll back but this is not very useful.
+
+
+**less**
+
+The command ``less`` writes the contents of a file onto the screen a page at a time. Type::
+
+  $ less science.txt
+
+Press the ``[space-bar]`` if you want to see another page, and type ``[q]`` if you want to quit reading. As you can see, ``less`` is used in preference to ``cat`` for long files.
+
+ 
+**head**
+
+The ``head`` command writes the first ten lines of a file to the screen.
+
+First clear the screen then type::
+  
+  $ head science.txt
+
+Then type::
+
+  $ head -5 science.txt
+
+What difference did the ``-5`` do to the head command?
+
+ 
+**tail**
+
+The tail command writes the last ten lines of a file to the screen.
+
+Clear the screen and type::
+
+  $ tail science.txt
+
+**Exercise**: How can you view the last 15 lines of the file?
+
+Searching the contents of a file
+--------------------------------
+
+**Simple searching using ``less``**
+
+Using ``less``, you can search though a text file for a keyword (pattern). For example, to search through ``science.txt`` for the word "science", type:
+
+  $ less science.txt
+
+then, still in ``less``, type a forward slash ``[/]`` followed by the word to search::
+
+  /science
+
+And tape ``[enter]``. Type ``[n]`` to search for the next occurrence of the word.
+
+ 
+**grep**
+
+``grep`` is one of many standard linux utilities. It searches files for specified words or patterns. First clear the screen, then type::
+
+  $ grep science science.txt
+
+As you can see, ``grep`` has printed out each line containg the word science.
+
+Or has it ????
+
+Try typing::
+
+  $ grep Science science.txt
+
+The ``grep`` command is case sensitive; it distinguishes between Science and science.
+
+To ignore upper/lower case distinctions, use the ``-i`` option, i.e. type::
+
+  $ grep -i science science.txt
+
+To search for a phrase or pattern, you must enclose it in single quotes (the apostrophe symbol). For example to search for spinning top, type::
+
+  $ grep -i 'spinning top' science.txt
+
+Some of the other options of ``grep`` are:
+- ``-v`` display those lines that do NOT match
+- ``-n`` precede each matching line with the line number
+- ``-c`` print only the total count of matched lines
+
+Try some of them and see the different results. Don't forget, you can use more than one option at a time. For example, the number of lines without the words science or Science is::
+
+  $ grep -ivc science science.txt
+
+Edit a file to install python
+-----------------------------
+
+There are some *very* powerful text editor systems in the linux command line, but they can be scary at the first sight. Therefore, we will use a normal (graphical) text editor to do the last and most important part of the tutoral: "install" the  python packages on your system.
+
+We will edit a file called ``.bashrc`` in your ``$home`` directory. As you can see, this file starts with a dot (``.``), meaning that this is a system file. So don't mess with it! Open the file in the standard editor by typing::
+
+  $ gedit ~/.bashrc
+  
+``gedit`` is the name of the editor program (like Window's "Notepad"). At the end of this file, add the following two lines::
+
+  # added for the physics of climate course:
+  export PATH="/scratch/c707/c7071047/miniconda3/bin:$PATH"
+  
+Save the file (``[ctrl+s]`` or click on "Save") and close the editor. See if everything worked fine by typing::
+
+  $ less ~/.bashrc
+  
+What did we just do? This is a bit complicated but in simple words, we just told linux to look into that folder and look for programs in it. If linux finds a program, it will add it to its "list of programs". For this change to take effect, you should close the terminal window and open a new one. In this new terminal, type::
+
+  $ python
+
+If everything worked fine, you should see the following::
+
+  Python 3.4.3 |Continuum Analytics, Inc.| (default, Oct 19 2015, 21:52:17) 
+  [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> 
+
+**If you don't see this, let me know!**
+
+Type ``[ctrl+d]`` to quit the python prompt.
+
+
+About
+-----
+
+:Aknowledgements:
+
+Largely inspired from the first parts of Michael Stonebank's `UNIX tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_
+
+:Author:
+    - Fabien Maussion - fabien.maussion@uibk.ac.at
+
+
