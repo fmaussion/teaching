@@ -328,6 +328,8 @@ We will edit a file called ``.bashrc`` in your ``$home`` directory. As you can s
   # added for the physics of climate course:
   export PATH="/scratch/c707/c7071047/miniconda3/bin:$PATH"
   
+**Note**: if you have installed miniconda/anaconda before, you will see very similar lines in your ``.bashrc`` file. You should replace these lines with the new ones.
+
 Save the file (``[ctrl+s]`` or click on "Save") and close the editor. See if everything worked fine by typing::
 
   $ less ~/.bashrc
