@@ -10,7 +10,7 @@ Install Miniconda
 
 Got to the miniconda `website <http://conda.pydata.org/miniconda.html>`_ and download the **python 3.4** installer for your platform (be careful to check wether you need a 64- or 32-bit version). 
 
-The installation is really easy and described `here <http://conda.pydata.org/docs/install/quick.html>`_.
+The installation is really easy and described `here <http://conda.pydata.org/docs/install/quick.html>`_. Be careful to choose an installation directory where you have enough space (conda installations can quickly grow larger than a few GB).
 
 To see if everything worked well, open a terminal window (on Windows, a `command prompt <http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>`_), and type in::
 
@@ -42,12 +42,45 @@ This created a new environment called "climate" which has python V3.4 as default
 
    source activate climate
    
-Note that after activation, the prompt changed to something like ``[climate]xxx>``. One in a specific environment, all the packages we install will be available in this environment only. This is very useful if you need different versions of python for different projects for example.
+or on windows::
 
-Think about activating this environment every time you want to work on the exercises or when installing a new package. You can deactivate an environment with::
+   activate climate
+   
+Note that after activation, the prompt changed to something like ``[climate]xxx>``. Once in a specific environment, all the packages we install will be available in this environment only. This is very useful if you need different versions of python for different projects for example.
+
+**Don't forget to activate this environment** every time you want to work on the exercises or when you want to install a new package. You can deactivate the current environment with::
 
    source deactivate
+   
+or on windows::
 
-Install the basic packages
---------------------------
+   deactivate
+
+
+Install the packages
+--------------------
+
+There are a couple of packages that you will always need, whatever you are working on. These are: `ipython <http://ipython.org/>`_, `Jupyter <https://jupyter.org/>`_, `numpy <http://www.numpy.org/>`_, `matplotlib <http://matplotlib.org/>`_. Once you are in the "climate" environment, type::
+
+    conda install numpy matplotlib ipython jupyter
+
+This will download the packages and install them, as well as their dependencies. This can take a while! If successful, you should now be able to start the notebook for example::
+
+    jupyter-notebook
+    
+Use ``control-c`` to close the server and get back to the prompt.
+
+Now we are going to install the packages required to open NetCDF files, `netcdf4 <http://unidata.github.io/netcdf4-python/>`_ and `xray <http://xray.readthedocs.org/en/stable/>`_::
+
+    conda install netcdf4 xray==0.6.0
+
+And finally, install the package required to plot on map projections::
+
+    conda install -c scitools cartopy
+
+
+Download the exercises and the data
+-----------------------------------
+
+The exercises (*.ipynb files) and the data can be downloaded from OLAT. Open `00_Getting_Started.ipynb` to start to learn Python!
 
