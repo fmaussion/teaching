@@ -5,20 +5,20 @@
 A short tutorial to the Linux command line
 ==========================================
 
-This document is a very short introduction to the linux systems used at the Univeristy of Innsbruck and to the Linux command line. 
+This document is a very short introduction to the linux systems used at the Univeristy of Innsbruck and to the Linux command line. The final part of the tutorial will install python for the exercises.
 
 It was largely inspired from the first parts of Michael Stonebank's `UNIX tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_
 
 What is Linux and why should I use it?
 --------------------------------------
 
-The `world wide web <http://lmgtfy.com/?q=What+is+Linux%3F>`_ is going to give a better answer than me to the first question.
+The `web <http://lmgtfy.com/?q=What+is+Linux%3F>`_ is going to give a better answer than me to the first question.
 
-I think that every student in sciences should know about the existence of Linux and know the basics of it. Meteorology students in particular will have to use it soon or late, as it is highly probable that most of the the tools and data they are using are running or have been created on Linux systems.
+I think that every student in sciences should know about the existence of Linux and know the basics of it. Meteorology students in particular will have to use it soon or late, as most of the the tools and data they are using are running or have been created on Linux systems.
 
-Linux has always been an environment for programmers and has the reputation of beiing "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my current personal favorite is `Mint <http://linuxmint.com/>`_).  
+Linux has always been an environment for programmers and has the reputation of beiing "geeky" and "complicated". This is less true today, with many Linux distributions becoming mainstream and easy to use (my current personal favorite is `Linux Mint <http://linuxmint.com/>`_).  
 
-I personnaly think that Linux is even more user-friendly than Windows: once some of its particularities are understood (which can be frustrating in the beginning since it works *very* differently than windows), one can see that there is much less "hidden" in Linux than in Windows (especially when installing/deinstalling softwares).
+I personnaly think that Linux is more user-friendly than Windows: once some of the particularities of Linux are understood (which can be frustrating in the beginning since it works *quite* differently than windows), one can see that there is much less "hidden" in Linux than in Windows (especially when installing/deinstalling softwares).
 
 Its command line utilities are very powerful, but we will just learn the basics before we get started with Python.
 
@@ -29,10 +29,11 @@ In order to use Linux in the computer room you have to register for an account `
 
 The Linux `distribution <https://en.wikipedia.org/wiki/Linux_distribution>`_ used at the university is `CentOS <https://www.centos.org/>`_ (version 6.7), and the `desktop environment <https://en.wikipedia.org/wiki/Desktop_environment>`_ is `Gnome <https://en.wikipedia.org/wiki/GNOME>`_. These details are not very important, since you will see that most of the applications we will use are similar to those in windows. For example, you will recognise the Firefox icon on the task bar.
 
+
 Open a terminal
 ---------------
 
-To open a terminal window, click on the "Terminal" icon from the ``Applications/System Tools`` menu. You can add an icon to your "quick llounch" taskbar simply by dragging the icon to it.
+To open a terminal window, click on the "Terminal" icon from the ``Applications/System Tools`` menu. You can add an icon to your "quick launch" taskbar simply by dragging the icon to it.
 
 A terminal window should appear with a ``$`` prompt, waiting for you to start entering commands.
 
@@ -58,6 +59,8 @@ To list all files in your home directory including those whose names begin with 
 As you can see, ``ls -a`` lists files that are normally hidden. 
 
 ``ls`` is an example of a command which can take options: ``-a`` is an example of an option. The options change the behaviour of the command. There are online manual pages that tell you which options a particular command can take, and how each option modifies the behaviour of the command. ``ls -lh`` is an other way tow call ``ls`` with two options, ``l`` for "listing format" and ``h`` for "human readable".
+
+**Note:** linux file names and commands are *case sensitive*, i.e. ``Test.txt`` is different from ``test.txt``, and both names could coexist in the same directory.
 
 
 The directory structure
@@ -197,7 +200,7 @@ Removing files and directories
 
 **rm (remove), rmdir (remove directory)**
 
-To delete (remove) a file, use the ``rm`` command. As an example, we are going to create a copy of the ``science.txt`` file then delete it.
+To delete (remove) a file, use the ``rm`` command. As an example, we are going to create a copy of the ``science.txt`` file and then delete it.
 
 Inside your ``unixstuff`` directory, type::
 
@@ -206,7 +209,15 @@ Inside your ``unixstuff`` directory, type::
   $ rm tempfile.txt
   $ ls
 
-You can use the ``rmdir`` command to remove a directory (make sure it is empty first). Try to remove the ``backup`` directory. You will not be able to since linux will not let you remove a non-empty directory.
+You can use the ``rmdir`` command to remove a directory (make sure it is empty first). Try to remove the ``backup`` directory. You will not be able to since linux will not let you remove a non-empty directory. To delete a non-empty directory with all its subdirectories you can use the option ``-r`` (r for recursive)::
+
+  $ rm -r /path/to/some/directory
+
+This command will then ask you confirmation for certain files judged important. If you are very sure of what you do, you can add a ``-f`` to the command (f for force)::
+
+  $ rm -rf /path/to/some/directory/that/i/am/very/sure/to/delete
+  
+**Note:** directories deleted with ``rm`` are lost *forever*. They don't go to the trash, they are just deleted.
 
 Displaying the contents of a file on the screen
 -----------------------------------------------
@@ -325,7 +336,7 @@ We will edit a file called ``.bashrc`` in your ``$home`` directory. As you can s
   
 ``gedit`` is the name of the editor program (like Window's "Notepad"). At the end of this file, add the following two lines::
 
-  # added for the physics of climate course:
+  # added for Fabien's course:
   export PATH="/scratch/c707/c7071047/miniconda3/bin:$PATH"
   
 **Note**: if you have installed miniconda/anaconda before, you will see very similar lines in your ``.bashrc`` file. You should replace these lines with the new ones.
@@ -334,20 +345,28 @@ Save the file (``[ctrl+s]`` or click on "Save") and close the editor. See if eve
 
   $ less ~/.bashrc
   
-What did we just do? This is a bit complicated but in simple words, we just told linux to look into that folder and look for programs in it. If linux finds a program, it will add it to its "list of programs". For this change to take effect, you should close the terminal window and open a new one. In this new terminal, type::
+What did we just do? In simple words, we just told linux to look into that folder and look for programs in it. If linux finds a program, it will add it to its "list of programs". **For this change to take effect, you should close the terminal window and open a new one**. In this new terminal, type::
 
   $ python
 
 If everything worked fine, you should see the following::
 
-  Python 3.4.3 |Continuum Analytics, Inc.| (default, Oct 19 2015, 21:52:17) 
+  Python 3.5.1 |Continuum Analytics, Inc.| (default, Dec  7 2015, 11:16:01) 
   [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
   Type "help", "copyright", "credits" or "license" for more information.
   >>> 
 
-**If you don't see this, let me know!**
+**You are now ready to learn Python!**
 
 Type ``[ctrl+d]`` to quit the python prompt.
+
+
+Before we go on
+---------------
+
+The disk space provided by the university to each studend is ridiculously small (approx. 1 GB). You should check your disk usage from time to time and, if needed, remove some data. You can do this by using ``rm`` in the terminal for example, or ``shift + delete`` on the directory explorer.
+
+**Note:** you can also see your linux disk usage from an internet browser (on any system) by typing ``zid-gpl.uibk.ac.at`` in the address bar. You will be asked for your linux id and password. This simple page allows you to estimate the size of all directories and delete them. 
 
 
 About
