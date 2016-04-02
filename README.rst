@@ -20,4 +20,6 @@ License
         :target: http://creativecommons.org/licenses/by-nc/4.0/
         :alt: Creative Commons License
         
-This lecture notes and exercises are licensed under a `Creative Commons Attribution-NonCommercial 4.0 International License <http://creativecommons.org/licenses/by-nc/4.0/>`_ feel free to use / adapt them, but don't sell them.
+This lecture notes and exercises are licensed under a `Creative Commons Attribution-NonCommercial 4.0 International License <http://creativecommons.org/licenses/by-nc/4.0/>`_ .
+
+Feel free to use / adapt them, but don't sell them.
