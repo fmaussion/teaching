@@ -10,4 +10,4 @@ Teaching resources for Fabien's lectures.
 You can have a look at the short `Linux tutorial <linux_tutorial.rst>`_
 if you are a student of the University of Innsbruck.
 
-Past courses can be found in the  `legacyl <legacy>`_ folder.
+Past courses can be found in the  `legacy <legacy>`_ folder.
