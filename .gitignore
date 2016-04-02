@@ -1,0 +1,4 @@
+*.nc
+*.csv
+*_checkpoints
+__pycache__
