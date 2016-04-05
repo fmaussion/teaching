@@ -351,10 +351,11 @@ What did we just do? In simple words, we just told linux to look into that folde
 
 If everything worked fine, you should see the following::
 
-  Python 3.5.1 |Continuum Analytics, Inc.| (default, Dec  7 2015, 11:16:01) 
+  Python 3.5.0rc4 |Continuum Analytics, Inc.| (default, Sep 10 2015, 14:39:45) 
   [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
   Type "help", "copyright", "credits" or "license" for more information.
   >>> 
+
 
 **You are now ready to learn Python!**
 
