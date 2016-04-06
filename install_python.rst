@@ -1,6 +1,9 @@
 Install Python for the exercises
 ================================
 
+**Note:** if you already have miniconda installed (for example for the 
+physics of climate course) you can jump directly to `Update the packages`_ . 
+
 Unlike Matlab or IDL, Python's scientific track is not installed
 "out of the box" with a single installation file.
 
@@ -101,7 +104,13 @@ start the notebook for example::
     
 Use ``control-c`` to close the server and get back to the prompt.
 
-Now we are going to install the packages required to open NetCDF files,
+For the glaciology excercises it will be necessary to install 
+`pandas <http://pandas.pydata.org/>`_::
+
+    conda install pandas
+
+I also recommend to install further useful packages (for example to 
+read meteorological and climatological data),
 `netcdf4 <http://unidata.github.io/netcdf4-python/>`_
 and `xarray <http://xarray.pydata.org/>`_::
 
@@ -110,6 +119,22 @@ and `xarray <http://xarray.pydata.org/>`_::
 And finally, install the package required to plot on map projections::
 
     conda install -c scitools cartopy
+    
+
+Update the packages
+-------------------
+
+If you already have a working conda, you can simply update your packages
+instead of making a new environment. Note that the xray package has changed 
+a bit during the last year, and that your climate notebooks won't work anymore
+(but you can always correct them). First, activate your environment::
+
+   source activate climate
+   
+And then simply update them all::
+
+   conda update --all
+
 
 
 Download the exercises and the data
