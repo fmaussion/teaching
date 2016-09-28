@@ -1,8 +1,9 @@
 Install Python for the exercises
 ================================
 
-**Note:** if you already have miniconda installed (for example for the 
-physics of climate course) you can jump directly to `Update the packages`_ . 
+**Note:** if you already have miniconda installed (for example since the 
+physics of climate or the glaciology courses) you can jump directly to 
+`Update the packages`_ . 
 
 Unlike Matlab or IDL, Python's scientific track is not installed
 "out of the box" with a single installation file.
@@ -87,6 +88,14 @@ or on windows::
 Install the packages
 --------------------
 
+First we are going to tell conda where to look for packages:: 
+
+   conda config --add channels conda-forge
+ 
+This has to be done only once. `conda-forge <http://conda-forge.github.io/>`_ 
+is a package repository, once you have set it up as default you don't 
+have to worry about it any more.
+
 There are a couple of packages that you will always need, whatever you are
 working on. These are: `ipython <http://ipython.org/>`_,
 `Jupyter <https://jupyter.org/>`_, `numpy <http://www.numpy.org/>`_,
@@ -118,7 +127,7 @@ and `xarray <http://xarray.pydata.org/>`_::
 
 And finally, install the package required to plot on map projections::
 
-    conda install -c scitools cartopy
+    conda install cartopy
     
 
 Update the packages
@@ -130,7 +139,11 @@ a bit during the last year, and that your climate notebooks won't work anymore
 (but you can always correct them). First, activate your environment::
 
    source activate climate
-   
+ 
+If not already done before, set the conda-forge default channel::
+
+   conda config --add channels conda-forge
+ 
 And then simply update them all::
 
    conda update --all
