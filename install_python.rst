@@ -137,9 +137,14 @@ Optional packages
     conda install dask
 
 
-`spyder <https://pythonhosted.org/spyder//>`_ is an interactive development environment similar to Matlab's::
+`spyder <https://pythonhosted.org/spyder/>`_ is an interactive development environment similar to Matlab's::
 
     conda install spyder
+
+
+`seaborn <https://stanford.edu/~mwaskom/software/seaborn/index.html>`_ to make pretty plots::
+
+    conda install seaborn
 
 
 Update the packages
