@@ -1,5 +1,5 @@
-Install Python for the exercises
-================================
+Install Python for the practicals
+=================================
 
 **Note:** if you already have miniconda installed (for example since the 
 physics of climate or the glaciology courses) you can jump directly to 
@@ -10,7 +10,7 @@ Unlike Matlab or IDL, Python's scientific track is not installed
 
 Fortunately, there are very useful tools out there to help us out.
 The most useful is `Miniconda <http://conda.pydata.org/miniconda.html>`_,
-which will help us to install Python **and** the packages we need for the
+which will help us to install **both** Python **and** the packages we need for the
 exercises within a couple of minutes. The first installation step is platform
 specific (Windows, Linux, or Mac) while the other steps are the same on all
 platforms.
@@ -24,8 +24,8 @@ download the **python 3.5** installer for your platform (be careful to
 check whether you need a 64- or 32-bit version).
 
 The installation is really easy and described
-`here <http://conda.pydata.org/docs/install/quick.html>`_. Be careful to
-choose an installation directory where you have enough space
+`here <http://conda.pydata.org/docs/install/quick.html>`_. Choose an 
+installation directory where you have enough space available
 (conda installations can quickly grow larger than a few GB).
 
 To see if everything worked well, open a terminal window (on Windows, a
@@ -113,22 +113,34 @@ start the notebook for example::
     
 Use ``control-c`` to close the server and get back to the prompt.
 
-For the glaciology excercises it will be necessary to install 
+For the glaciology practicals it will be necessary to install 
 `pandas <http://pandas.pydata.org/>`_::
 
     conda install pandas
 
-I also recommend to install further useful packages (for example to 
-read meteorological and climatological data),
+For the climate practicals we will need
 `netcdf4 <http://unidata.github.io/netcdf4-python/>`_
 and `xarray <http://xarray.pydata.org/>`_::
 
     conda install netcdf4 xarray
 
-And finally, install the package required to plot on map projections::
+And finally, install the package required to plot on 
+`map projections <http://scitools.org.uk/cartopy/docs/latest/index.html>`_::
 
     conda install cartopy
-    
+
+Optional packages
+-----------------
+
+`dask <http://dask.pydata.org/en/latest/>`_ is used by xarray to make large data computations possible::
+
+    conda install dask
+
+
+`spyder <https://pythonhosted.org/spyder//>`_ is an interactive development environment similar to Matlab's::
+
+    conda install spyder
+
 
 Update the packages
 -------------------
@@ -153,6 +165,6 @@ And then simply update them all::
 Download the exercises and the data
 -----------------------------------
 
-The exercises (*.ipynb files) and the data can be downloaded from OLAT.
+The exercises (*.ipynb files) and the data can be downloaded from OLAT or from this Github repository.
 Open `00_Getting_Started.ipynb` to start to learn Python!
 
