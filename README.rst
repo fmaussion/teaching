@@ -16,10 +16,10 @@ Past courses can be found in the  `legacy <legacy>`_ folder.
 License
 -------
 
-.. image:: https://i.creativecommons.org/l/by-nc/4.0/88x31.png
-        :target: http://creativecommons.org/licenses/by-nc/4.0/
+.. image:: http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.eu.svg
+        :target: https://creativecommons.org/licenses/by-nc-sa/4.0/
         :alt: Creative Commons License
         
-This lecture notes and exercises are licensed under a `Creative Commons Attribution-NonCommercial 4.0 International License <http://creativecommons.org/licenses/by-nc/4.0/>`_.
+This lecture notes and exercises are licensed under a `Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
 
-Feel free to use / adapt them, but don't sell them.
+Feel free to use / adapt them, but don't sell them, and share them under the same licence.
