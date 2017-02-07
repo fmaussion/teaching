@@ -1,5 +1,5 @@
-Install Python for the practicals
-=================================
+Python for scientists: installation instructions
+================================================
 
 **Note:** if you already have miniconda installed (for example since the 
 physics of climate or the glaciology courses) you can jump directly to 
@@ -10,10 +10,10 @@ Unlike Matlab or IDL, Python's scientific track is not installed
 
 Fortunately, there are very useful tools out there to help us out.
 The most useful is `Miniconda <http://conda.pydata.org/miniconda.html>`_,
-which will help us to install **both** Python **and** the packages we need for the
-exercises within a couple of minutes. The first installation step is platform
-specific (Windows, Linux, or Mac) while the other steps are the same on all
-platforms.
+which will help us to install **both** Python **and** the packages we need
+within a couple of minutes. The first installation step (`Install Miniconda`_) 
+is platform specific (Windows, Linux, or Mac) while the other steps are the 
+same on all platforms.
 
 
 Install Miniconda
@@ -48,13 +48,17 @@ A new python prompt should appear, with something like::
 You can type ``exit()`` aor ``[CTRL+D]``to get out of the python prompt.
 
 
-Make a new environment called "climate"
----------------------------------------
+Optional: make a new environment called "climate"
+-------------------------------------------------
 
 Conda also helps us to define so-called "environments". A conda environment is
 a directory that contains a specific collection of packages that you have
 installed. Please have a short look at the conda introduction
 `here <http://conda.pydata.org/docs/intro.html>`_ before going on.
+
+Environments are not necessary, but helpful on the long term. If this is 
+your first installation you might want to skip this part and go directly
+to `Install the packages`_.
 
 In the terminal, type::
 
@@ -101,7 +105,7 @@ working on. These are: `ipython <http://ipython.org/>`_,
 `Jupyter <https://jupyter.org/>`_, `numpy <http://www.numpy.org/>`_,
 `matplotlib <http://matplotlib.org/>`_.
 
-Once you are in the "climate" environment, type::
+Once you are in the right environment, type::
 
     conda install numpy matplotlib ipython jupyter
 
@@ -113,12 +117,12 @@ start the notebook for example::
     
 Use ``control-c`` to close the server and get back to the prompt.
 
-For the glaciology practicals it will be necessary to install 
+I also reommend to install
 `pandas <http://pandas.pydata.org/>`_::
 
     conda install pandas
 
-For the climate practicals we will need
+For NetCDF data I strongly recommend
 `netcdf4 <http://unidata.github.io/netcdf4-python/>`_
 and `xarray <http://xarray.pydata.org/>`_::
 
@@ -151,9 +155,7 @@ Update the packages
 -------------------
 
 If you already have a working conda, you can simply update your packages
-instead of making a new environment. Note that the xray package has changed 
-a bit during the last year, and that your climate notebooks won't work anymore
-(but you can always correct them). First, activate your environment::
+instead of making a new environment. *If needed*, activate your environment::
 
    source activate climate
  
@@ -164,12 +166,3 @@ If not already done before, set the conda-forge default channel::
 And then simply update them all::
 
    conda update --all
-
-
-
-Download the exercises and the data
------------------------------------
-
-The exercises (*.ipynb files) and the data can be downloaded from OLAT or from this Github repository.
-Open `00_Getting_Started.ipynb` to start to learn Python!
-
