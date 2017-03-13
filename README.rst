@@ -9,8 +9,8 @@ Teaching resources for Fabien's lectures.
 
 You can have a look at the short `Linux tutorial <linux_tutorial.rst>`_ if you
 are a student at the University of Innsbruck, or the
-`Linux tutorial <install_python.rst>`_ if you want to install python on your
-laptop.
+`Python installation instructions <install_python.rst>`_ if you want to
+install python on your laptop.
 
 License
 -------
