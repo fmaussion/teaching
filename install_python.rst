@@ -20,7 +20,7 @@ Install Miniconda
 -----------------
 
 Got to the miniconda `website <http://conda.pydata.org/miniconda.html>`_ and
-download the **python 3.5** installer for your platform (be careful to
+download the latest **python 3.X** installer for your platform (be careful to
 check whether you need a 64- or 32-bit version).
 
 The installation is really easy and described
@@ -62,7 +62,7 @@ to `Install the packages`_.
 
 In the terminal, type::
 
-    conda create -n climate python=3.5
+    conda create -n climate python=3.6
     
 This created a new environment called "climate" which has python V3.5 as
 default interpreter. This environment can be activated with one command::
@@ -166,3 +166,10 @@ If not already done before, set the conda-forge default channel::
 And then simply update them all::
 
    conda update --all
+   
+
+FAQ
+---
+
+- **Why should I install python 3?**: because Python 3 is the present and future of the language, and for our friends the `polar bears <http://fabienmaussion.info/2016/05/23/legacy-python/>`_
+- **Should I use virtual environments?**: if this is your first contact with python, I recommend not to use them: they can be a bit confusing at first, and they require extra steps which one tends to forget (e.g. ``source activate``). On the longer term and for package devellopers they become very useful. 
