@@ -7,10 +7,15 @@ Fabien's teaching resources
 
 Teaching resources for Fabien's lectures.
 
-You can have a look at the short `Linux tutorial <linux_tutorial.rst>`_ if you
-are a student at the University of Innsbruck, or the
-`Python installation instructions <install_python.rst>`_ if you want to
-install python on your laptop.
+You can have a look at the `Python installation instructions <install_python.rst>`_ if you want to
+install python on your laptop, or this short `Linux tutorial <linux_tutorial.rst>`_  (for students
+at the University of Innsbruck).
+
+Recent courses
+--------------
+
+- `Physics of the Climate System <https://github.com/fmaussion/teaching/tree/master/ws_2016>`_ (WS2016, Master level)
+- `The Cryosphere in the Climate System <https://github.com/fmaussion/teaching/tree/master/ss_2017>`_ (SS2017, Master level)
 
 License
 -------
@@ -19,6 +24,6 @@ License
         :target: https://creativecommons.org/licenses/by-nc-sa/4.0/
         :alt: Creative Commons License
         
-This lecture notes and exercises are licensed under a `Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
+These lecture notes and exercises are licensed under a `Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
 
 Feel free to use / adapt them, but don't sell them, and share them under the same licence.
