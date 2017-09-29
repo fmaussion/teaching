@@ -11,11 +11,10 @@ You can have a look at the `Python installation instructions <install_python.rst
 install python on your laptop, or this short `Linux tutorial <linux_tutorial.rst>`_  (for students
 at the University of Innsbruck).
 
-Recent courses
---------------
+Current courses
+---------------
 
-- `Physics of the Climate System <https://github.com/fmaussion/teaching/tree/master/ws_2016>`_ (WS2016, Master level)
-- `The Cryosphere in the Climate System <https://github.com/fmaussion/teaching/tree/master/ss_2017>`_ (SS2017, Master level)
+- `Physics of the Climate System <https://github.com/fmaussion/teaching/tree/master/ws_2017>`_ (WS2017, Master level)
 
 License
 -------
