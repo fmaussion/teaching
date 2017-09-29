@@ -57,7 +57,7 @@ installed. Please have a short look at the conda introduction
 `here <http://conda.pydata.org/docs/intro.html>`_ before going on.
 
 Environments are not necessary, but helpful on the long term. If this is 
-your first installation you might want to skip this part and go directly
+your first installation you probably want to skip this part and go directly
 to `Install the packages`_.
 
 In the terminal, type::
@@ -117,7 +117,7 @@ start the notebook for example::
     
 Use ``control-c`` to close the server and get back to the prompt.
 
-I also reommend to install
+Also install
 `pandas <http://pandas.pydata.org/>`_::
 
     conda install pandas
@@ -133,12 +133,16 @@ And finally, install the package required to plot on
 
     conda install cartopy
 
-Optional packages
------------------
+Recommended packages
+--------------------
 
 `dask <http://dask.pydata.org/en/latest/>`_ is used by xarray to make large data computations possible::
 
     conda install dask
+
+`bottleneck <https://github.com/kwgoodman/bottleneck/>`_ is used by xarray to make rolling operations faster::
+
+    conda install bottleneck
 
 
 `spyder <https://pythonhosted.org/spyder/>`_ is an interactive development environment similar to Matlab's::
