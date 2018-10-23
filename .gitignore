@@ -2,5 +2,6 @@
 *.csv
 *.idea
 *_checkpoints
+*.nbgrader.log
 *Correction*
 __pycache__
