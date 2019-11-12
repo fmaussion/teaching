@@ -5,3 +5,4 @@
 *.nbgrader.log
 *Correction*
 __pycache__
+current/data
