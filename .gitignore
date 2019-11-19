@@ -4,5 +4,6 @@
 *_checkpoints
 *.nbgrader.log
 *Correction*
+*Solution*
 __pycache__
 current/data
